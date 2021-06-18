@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+    cybavomock:
+        build: .
+        image: cybavomock:v1.0
+        command: "./cybavo_mock"
+        restart: always
+        ports:
+            - 8099:8889
+        volumes:
+            - ./conf/mockserver.app.conf:/root/conf/mockserver.app.conf
